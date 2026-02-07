@@ -48,7 +48,7 @@ cities=data.frame(
 )
 
 
-# PLOT MAPS BEFORE REPROJECTION
+# MAPS BEFORE REPROJECTION
 
 # Output image dimensions
 DIMX=1080
@@ -66,7 +66,7 @@ CairoPNG("mapreal.png", width=DIMX*1.6, height=DIMY, antialias="subpixel")
 dev.off()
 
 
-# PLOT MAPS WITH NEW ZEALAND REPROJECTION
+# MAPS WITH NEW ZEALAND REPROJECTION
 
 # Project New Zealand
 NZ$long = NZ$long - 180
@@ -122,4 +122,3 @@ CairoPNG("newzealandvsitaly.png", width=DIMX*1.2, height=DIMY, antialias="subpix
     plot_subregion_polygons(IT, border='darkred', col=rgb(1,0,0,0.4))
     plot_subregion_polygons(NZ, border='darkgreen', col=rgb(0,1,0,0.4))
 dev.off()
-
