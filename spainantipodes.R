@@ -15,14 +15,14 @@ plot_subregion_polygons <- function(df, x = "long", y = "lat", subregion = "subr
     subs <- unique(df[[subregion]])
     
     for (s in subs) {
-        if (is.na(s)) {
+        if (is.na(s)) {  # usually main lands (not islands) of each country have subregion=NA
             d <- df[is.na(df[[subregion]]), ]
         } else {
             d <- df[df[[subregion]] == s, ]
         }
         
-        d <- d[base::order(d[[ord]]), ]
-        polygon(d[[x]], d[[y]],
+        d <- d[base::order(d[[ord]]), ]  # order by column "order" in case they are not
+        polygon(d[[x]], d[[y]],          # to properly plot the polygon
                 border = border,
                 col = col)
     }
