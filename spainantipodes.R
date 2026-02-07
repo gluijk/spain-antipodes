@@ -50,7 +50,7 @@ cities=data.frame(
 
 # PLOT MAPS BEFORE REPROJECTION
 
-# Image dimensions
+# Output image dimensions
 DIMX=1080
 DIMY=1080
 
@@ -75,7 +75,6 @@ NZ$lat = -NZ$lat
 # Project Wellington too
 cities$long[cities$city == "Wellington"] = cities$long[cities$city == "Wellington"] - 180
 cities$lat[cities$city == "Wellington"] = -cities$lat[cities$city == "Wellington"]
-
 
 CairoPNG("mapantipodes.png", width=DIMX, height=DIMY, antialias="subpixel")
     # Empty basic plotting parameters
