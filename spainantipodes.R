@@ -92,13 +92,11 @@ CairoPNG("mapantipodes.png", width=DIMX, height=DIMY, antialias="subpixel")
     # Plot cities
     points(cities$long, cities$lat, 
            pch = 19,       # solid circle
-           col = "black",
-           cex = 1.5)      # size of the point
+           cex = 1.5, col = "black")
     text(cities$long, cities$lat,
          labels = cities$city,
          pos = c(4, 4),    # 4 = right of the point
-         cex = 1.5,
-         col = "black")
+         cex = 1.5, col = "black")
     
     abline(h=0, v=0)
 dev.off()
