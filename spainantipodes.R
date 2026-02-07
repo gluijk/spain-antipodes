@@ -8,6 +8,7 @@ library(Cairo)  # output antialiasing
 
 
 # Polygon plotting function provided by ChatGPT
+# Draws a series of points based on coordinates as solid polygons
 plot_subregion_polygons <- function(df, x = "long", y = "lat", subregion = "subregion",
                                     ord = "order", border = "black", col = NA) {
     
@@ -35,8 +36,9 @@ plot_subregion_polygons <- function(df, x = "long", y = "lat", subregion = "subr
 # READ WORLD AND CAPITALS COORDINATES
 DT=data.table(map_data("world"))  # (long, lat) pairs for all countries
 DT$long[DT$long>180]=DT$long[DT$long>180]-360  # offset out of range points
+
 SP=DT[DT$region=='Spain']
-NZ=DT[DT$region=='New Zealand' & DT$long>0 & DT$lat> -48]  # ignore NZ tiniest far islands
+NZ=DT[DT$region=='New Zealand' & DT$long>0 & DT$lat> -48]  # ignore NZ tiniest far away islands
 
 # Capitals
 cities=data.frame(
