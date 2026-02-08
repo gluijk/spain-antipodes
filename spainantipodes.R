@@ -22,7 +22,7 @@ plot_subregion_polygons <- function(df, x = "long", y = "lat", subregion = "subr
             d <- df[df[[subregion]] == s, ]
         }
         
-        d <- d[base::order(d[[ord]]), ]  # order by column "order" in case they are not
+        d <- d[order(d[[ord]]), ]  # order by column "order" in case they are not
         polygon(d[[x]], d[[y]],          # to properly plot the polygon
                 border = border,
                 col = col)
