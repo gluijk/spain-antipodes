@@ -62,7 +62,7 @@ CairoPNG("mapreal.png", width=DIMX*1.6, height=DIMY, antialias="subpixel")
          cex.main = 2, cex.lab = 2, cex.axis = 2,
          asp=1.3)
     points(NZ$long, NZ$lat, pch=".", col='darkgreen')
-    abline(h=0, v=0)
+    abline(h=0, v=0, lty="dotted")
 dev.off()
 
 
@@ -99,7 +99,7 @@ CairoPNG("mapantipodes.png", width=DIMX, height=DIMY, antialias="subpixel")
          pos = c(4, 4),    # 4 = right of the point
          cex = 1.5, col = "black")
     
-    abline(h=0, v=0)
+    abline(h=0, v=0, lty="dotted")
 dev.off()
 
 
