@@ -23,7 +23,7 @@ plot_subregion_polygons <- function(df, x = "long", y = "lat", subregion = "subr
         }
         
         d <- d[order(d[[ord]]), ]  # order by column "order" in case they are not
-        polygon(d[[x]], d[[y]],          # to properly plot the polygon
+        polygon(d[[x]], d[[y]],    # to properly plot the polygon
                 border = border,
                 col = col)
     }
@@ -122,3 +122,4 @@ CairoPNG("newzealandvsitaly.png", width=DIMX*1.2, height=DIMY, antialias="subpix
     plot_subregion_polygons(IT, border='darkred', col=rgb(1,0,0,0.4))
     plot_subregion_polygons(NZ, border='darkgreen', col=rgb(0,1,0,0.4))
 dev.off()
+
