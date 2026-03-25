@@ -79,7 +79,7 @@ cities$lat[cities$city == "Wellington"] = -cities$lat[cities$city == "Wellington
 CairoPNG("mapantipodes.png", width=DIMX, height=DIMY, antialias="subpixel")
     # Empty basic plotting parameters
     plot(NA,
-         main = "Spain and its antipodes (New Zealand)",,
+         main = "Spain and its antipodes (New Zealand)",
          xlab = "Longitude (º)", ylab = "Latitude (º)",
          xlim = range(c(SP$long, NZ$long), na.rm = TRUE),
          ylim = range(c(SP$lat,  NZ$lat),  na.rm = TRUE),
